@@ -259,7 +259,7 @@ overlay {
     position: fixed;
     right: 5%;
     font-weight: lighter;
-    font-size: 1rem;
+    font-size: 2rem;
     transition: all 0.3s ease-in-out;
   }
   .close-menu.active {
@@ -915,4 +915,5 @@ padding-left: 10vh;
     margin: 0 auto;
     left: 38%;
   }
+
 }
