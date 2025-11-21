@@ -41,24 +41,7 @@
 </head>
 <body>
 
-<script> 
-    function onScrollHideHeader() {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 150) {
-      if (currentScroll > lastScrollY) {
-        header.classList.add('header--hide');
-      } else {
-        header.classList.remove('header--hide');
-      }
-    } else {
-      header.classList.remove('header--hide');
-    }
-    lastScrollY = currentScroll;
-  }
-</script>
-  
-
- <header class="header transparent" id="main-header">
+<header class="header transparent" id="main-header">
     <nav>
       <div class="nav-left">
       <a href="index.html" class="logo">
@@ -67,11 +50,9 @@
       </div>
 
       <button class="icon-menu ham">
-        <i class="fa-solid fa-bars"></i>
+        <i style="color: #1e3b27;" class="fa-solid fa-bars"></i>
       </button>
-
-      <i class="fa-light fa-circle-xmark close-menu"></i>
-
+        <h1 class="close-menu">X</h1>
       <div class="desktop-nav">
 
         <!-- CENTERED Nav Links -->
@@ -608,3 +589,4 @@ faqQuestions.forEach((question) => {
 </body>
 
 </html>
+
