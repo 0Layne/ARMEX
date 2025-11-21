@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>ARMEX SHIELD | Terms Page</title>
+
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="legal.css">
+
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="ARMEX SHIELD" />
+    <link rel="manifest" href="favicon//site.webmanifest" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Goldman:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Controls Safari/iOS status bar -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- Modern browsers theme color -->
+    <meta name="theme-color" content="#0081cc">
+</head>
+<body>
+ <header class="header transparent" id="main-header">
+    <nav>
+      <div class="nav-left">
+      <a href="index.html" class="logo">
+        <img src="photo/armex-logo.png" alt="company logo" />
+      </a>
+      </div>
+
+      <button class="icon-menu ham">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <i class="fa-light fa-circle-xmark close-menu"></i>
+
+      <div class="desktop-nav">
+
+        <!-- CENTERED Nav Links -->
+        <div class="nav-center">
+
+          <div class="dropdown">
+            <div class="menu-item">
+              Film
+              <i class="fa-solid fa-angle-down dropbtn"></i>
+            </div>
+            <div class="dropdown-content">
+              <a href="Security .html">Security Film</a>
+              <a href="Security .html">Shatter Defense</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <div class="menu-item">
+              Services
+              <i class="fa-solid fa-angle-down dropbtn"></i>
+            </div>
+            <div class="dropdown-content">
+              <a href="index.html#intruders-section">Intruders</a>
+              <a href="index.html#weather-section">Weather</a>
+              <a href="index.html#uv-section">UV</a>
+            </div>
+          </div>
+
+          <div class="menu-item"><a href="contact.html#testimonial">Testimonials</a></div>
+          <div class="menu-item"><a href="index.html#stat">About</a></div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="nav-right">
+          <div class="social-btns">
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-google"></i>
+          </div>
+          <div class="nav-btns">
+            <a class="chat-btn" href="contact.html#contact">Let's Chat!</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="overlay"></div>
+    </nav>
+</header>
+
+    <script>
+      const hamBurger = document.querySelector(".ham");
+      const closeMenu = document.querySelector(".close-menu");
+      const overLay = document.querySelector(".overlay");
+      const mobileNav = document.querySelector(".desktop-nav");
+
+      hamBurger.addEventListener("click", e => {
+        e.preventDefault();
+        mobileNav.classList.add("active");
+        overLay.style.display = "block";
+        closeMenu.classList.add("active");
+      });
+
+      closeMenu.addEventListener("click", e => {
+        e.preventDefault();
+        mobileNav.classList.remove("active");
+        overLay.style.display = "none";
+        closeMenu.classList.remove("active");
+      });
+    </script>
+
+<!--header-->
+  <script>
+    const header = document.getElementById("main-header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.remove("transparent");
+        header.classList.add("scrolled");
+      } else {
+        header.classList.add("transparent");
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+
+
+
+<main class="legal-wrapper hero-section">
+<section class="legal-page">
+<div class="legal-cont">
+  <h1>Privacy Policy</h1>
+  <p>ARMEX SHIELD respects your privacy. We do not sell, rent, or share your personal information with third parties, except as necessary to provide services you request or when required by law.</p>
+  <h2>Information We Collect</h2>
+  <ul>
+    <li>Your name, phone number, and email address when you contact us.</li>
+    <li>Anonymous data such as IP address, browser type, and device type to improve our website.</li>
+  </ul>
+  <h2>How We Use Your Information</h2>
+  <ul>
+    <li>To respond to inquiries and service requests.</li>
+    <li>To improve our website and services.</li>
+    <li>To comply with legal obligations.</li>
+  </ul>
+  <h2>Your Rights</h2>
+  <p>You may request to view, update, or delete your personal data at any time by contacting us. We implement industry-standard safeguards to protect your data.</p>
+  </div>
+</section>
+</main>
+
+
+
+
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+  <script>AOS.init();</script>
+
+  </body>
+  </html>

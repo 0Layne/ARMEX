@@ -1,0 +1,375 @@
+// header Java
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
+  const logos = document.querySelectorAll('.logo');
+  const hero = document.querySelector('.hero-section');
+  let lastScrollY = window.scrollY;
+  let observer;
+
+  const maxScroll = 650;
+  const maxPadding = 15;
+  const minPadding = 5;
+  const maxLogo = 40;
+  const minLogo = 30;
+
+  let isLargeScreen = window.innerWidth > 900;
+
+  function applyDesktopHeaderBehavior() {
+    window.addEventListener('scroll', onScrollResizeHeader);
+    window.addEventListener('scroll', onScrollHideHeader);
+    window.addEventListener('scroll', onScrollToggleHeaderBackground);
+
+    observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) {
+        header.classList.add('header--fixed');
+      } else {
+        header.classList.remove('header--fixed');
+      }
+    }, { threshold: 0 });
+
+    observer.observe(hero);
+  }
+
+  function applyMobileHeaderBehavior() {
+    header.style.padding = '1rem 1rem';
+
+    window.addEventListener('scroll', onScrollToggleHeaderBackground);
+
+    observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) {
+        header.classList.add('header--fixed');
+      } else {
+        header.classList.remove('header--fixed');
+      }
+    }, {
+      rootMargin: '0px',
+      threshold: 0
+    });
+
+    observer.observe(hero);
+  }
+
+  function onScrollResizeHeader() {
+    const scrollY = Math.min(window.scrollY, maxScroll);
+    const scrollRatio = scrollY / maxScroll;
+    const currentPadding = maxPadding - (maxPadding - minPadding) * scrollRatio;
+    const currentLogo = maxLogo - (maxLogo - minLogo) * scrollRatio;
+
+    header.style.padding = `${currentPadding}px 1rem`;
+    logos.forEach(logo => logo.style.height = `${currentLogo}px`);
+  }
+
+  function onScrollHideHeader() {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 650) {
+      if (currentScroll > lastScrollY) {
+        header.classList.add('header--hide');
+      } else {
+        header.classList.remove('header--hide');
+      }
+    } else {
+      header.classList.remove('header--hide');
+    }
+    lastScrollY = currentScroll;
+  }
+
+  function onScrollToggleHeaderBackground() {
+    if (window.scrollY > 100) {
+      header.classList.add('header--scrolled');
+    } else {
+      header.classList.remove('header--scrolled');
+    }
+  }
+
+  function cleanup() {
+    if (observer) observer.disconnect();
+    window.removeEventListener('scroll', onScrollResizeHeader);
+    window.removeEventListener('scroll', onScrollHideHeader);
+    window.removeEventListener('scroll', onScrollToggleHeaderBackground);
+    header.classList.remove('header--fixed', 'header--hide', 'header--scrolled');
+    header.style.padding = '';
+    logos.forEach(logo => logo.style.height = '');
+  }
+
+  function checkWidthAndApplyBehavior() {
+    const nowLarge = window.innerWidth > 900;
+    if (nowLarge && !isLargeScreen) {
+      cleanup();
+      isLargeScreen = true;
+      applyDesktopHeaderBehavior();
+    } else if (!nowLarge && isLargeScreen) {
+      cleanup();
+      isLargeScreen = false;
+      applyMobileHeaderBehavior();
+    }
+  }
+ 
+  window.addEventListener('load', () => {
+    if (isLargeScreen) {
+      onScrollResizeHeader(); // ensure logo starts at correct enlargement
+    }
+  });
+
+  // Initial run
+  if (isLargeScreen) {
+    applyDesktopHeaderBehavior();
+    requestAnimationFrame(() => {
+      onScrollResizeHeader();
+    });
+  } else {
+    applyMobileHeaderBehavior();
+  }
+
+
+  window.addEventListener('resize', checkWidthAndApplyBehavior);
+
+// Hamburger menu logic
+const toggleMenu = document.getElementById('nav-toggle');
+const closeMenu = document.getElementById('nav-close');
+const navMenu  = document.getElementById('nav-menu');
+
+// open/close the slideout
+toggleMenu.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+closeMenu.addEventListener('click', () => {
+  navMenu.classList.remove('show');
+});
+
+// --- Dropdown handling (mobile + desktop click) ---
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownParent = dropdownToggle ? dropdownToggle.closest('.nav-dropdown') : null;
+
+if (dropdownToggle && dropdownParent) {
+  const toggleDropdown = (e) => {
+    // prevent the '#' navigation + keep the slideout open
+    e.preventDefault();
+    e.stopPropagation();
+    dropdownParent.classList.toggle('open');
+  };
+
+  // support touch + click
+  ['click', 'touchstart'].forEach(evt => {
+    dropdownToggle.addEventListener(evt, toggleDropdown, { passive: false });
+  });
+}
+
+// Close slideout when clicking a normal nav link (NOT the dropdown toggle)
+navMenu.querySelectorAll('.nav__link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    // If it’s the dropdown toggle, we already handled it above — do nothing here
+    if (this.classList.contains('dropdown-toggle')) return;
+    navMenu.classList.remove('show'); // close after navigating
+  });
+});
+
+
+  // ScrollTo Section
+  window.scrollToSection = function (sectionClass) {
+    const section = document.querySelector(`.${sectionClass}`);
+    if (section) {
+      const offset = 130;
+      const sectionPosition = section.offsetTop - offset;
+      const currentPosition = window.scrollY;
+      const distance = sectionPosition - currentPosition;
+      const duration = 1000;
+      const startTime = performance.now();
+
+      function animateScroll(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeInOutQuad =
+          progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+        window.scrollTo(0, currentPosition + distance * easeInOutQuad);
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        }
+      }
+
+      requestAnimationFrame(animateScroll);
+    }
+  };
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Home-screen animation: Slide logo up from bottom
+window.addEventListener("load", () => {
+  document.querySelectorAll(".title-animate").forEach((el) => {
+    setTimeout(() => {
+      el.classList.add("title-active");
+    }, 5);
+  });
+});
+
+
+
+
+
+
+
+
+
+
+/*scrolling animation*/
+document.addEventListener("scroll", () => {
+  const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
+
+  document.querySelectorAll(".scroll-animate").forEach((el) => {
+    const elementPosition = el.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.1;
+
+    if (elementPosition < screenPosition) {
+      el.classList.add("active");
+      el.classList.remove("scroll-out"); // Ensure scroll-out is removed
+    } else if (!isMobile) {
+      el.classList.remove("active"); // Reset animation only on larger screens
+    }
+  });
+
+  if (!isMobile) {
+    document.querySelectorAll(".scroll-out-100").forEach((el) => {
+      const elementPosition = el.getBoundingClientRect().top;
+      const scrollOutTrigger = 30;
+      if (elementPosition < scrollOutTrigger) {
+        el.classList.add("scroll-out");
+        el.classList.remove("active");
+      }
+    });
+
+    document.querySelectorAll(".scroll-out-20").forEach((el) => {
+      const elementPosition = el.getBoundingClientRect().top;
+      const scrollOutTrigger = -25;
+      if (elementPosition < scrollOutTrigger) {
+        el.classList.add("scroll-out");
+        el.classList.remove("active");
+      }
+    });
+  }
+});
+
+
+/*scrolling animation for the title*/
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll('.animate-section');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('title-active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});
+
+  document.addEventListener("scroll", () => {
+    const isMobile = window.innerWidth <= 768;
+
+    document.querySelectorAll(".scroll-animateY").forEach((el) => {
+      const elementPosition = el.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.1;
+
+      if (elementPosition < screenPosition) {
+        el.classList.add("active");
+      } else if (!isMobile) {
+        el.classList.remove("active");
+      }
+    });
+
+
+
+
+  });
+
+
+
+
+
+
+
+
+/*scroll down button at the section1*/
+function scrollToSection(sectionClass) {
+  const section = document.querySelector(`.${sectionClass}`);
+  if (section) {
+    const offset = 130;
+    const sectionPosition = section.offsetTop - offset;
+    const currentPosition = window.scrollY;
+    const distance = sectionPosition - currentPosition;
+    const duration = 1000;
+    const startTime = performance.now();
+
+    function animateScroll(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeInOutQuad =
+        progress < 0.5
+          ? 2 * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+      window.scrollTo(0, currentPosition + distance * easeInOutQuad);
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    requestAnimationFrame(animateScroll);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*scroll up button at the footer*/
+function scrollToTop() {
+  const duration = 1000;
+  const start = window.scrollY;
+  const startTime = performance.now();
+
+  function animateScroll(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easeInOutQuad =
+      progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+    window.scrollTo(0, start * (1 - easeInOutQuad));
+
+    if (progress < 1) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
+
+  requestAnimationFrame(animateScroll);
+}

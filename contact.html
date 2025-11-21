@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>ARMEX SHIELD | Contact and Testimonials of ARMEX SHIELD</title>
+
+    <meta name="description" content="Get in touch with ARMEX SHIELD to start your window security film project. Use our contact form to reach our team and explore testimonials from homeowners and businesses nationwide." />
+
+
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="nav.css">
+
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="ARMEX SHIELD" />
+    <link rel="manifest" href="favicon//site.webmanifest" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Goldman:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Controls Safari/iOS status bar -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- Modern browsers theme color -->
+    <meta name="theme-color" content="#0081cc">
+</head>
+<body>
+
+<script> 
+    function onScrollHideHeader() {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 150) {
+      if (currentScroll > lastScrollY) {
+        header.classList.add('header--hide');
+      } else {
+        header.classList.remove('header--hide');
+      }
+    } else {
+      header.classList.remove('header--hide');
+    }
+    lastScrollY = currentScroll;
+  }
+</script>
+  
+
+ <header class="header transparent" id="main-header">
+    <nav>
+      <div class="nav-left">
+      <a href="index.html" class="logo">
+        <img src="photo/armex-logo.png" alt="company logo" />
+      </a>
+      </div>
+
+      <button class="icon-menu ham">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <i class="fa-light fa-circle-xmark close-menu"></i>
+
+      <div class="desktop-nav">
+
+        <!-- CENTERED Nav Links -->
+        <div class="nav-center">
+
+          <div class="dropdown">
+            <div class="menu-item">
+              Film
+              <i class="fa-solid fa-angle-down dropbtn"></i>
+            </div>
+            <div class="dropdown-content">
+              <a href="Security .html">Security Film</a>
+              <a href="Security .html">Shatter Defense</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <div class="menu-item">
+              Services
+              <i class="fa-solid fa-angle-down dropbtn"></i>
+            </div>
+            <div class="dropdown-content">
+              <a href="index.html#intruders-section">Intruders</a>
+              <a href="index.html#weather-section">Weather</a>
+              <a href="index.html#uv-section">UV</a>
+            </div>
+          </div>
+
+          <div class="menu-item"><a href="contact.html#testimonial">Testimonials</a></div>
+          <div class="menu-item"><a href="index.html#stat">About</a></div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="nav-right">
+          <div class="social-btns">
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-google"></i>
+          </div>
+          <div class="nav-btns">
+            <a class="chat-btn" href="contact.html#contact">Let's Chat!</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="overlay"></div>
+    </nav>
+</header>
+
+    <script>
+      const hamBurger = document.querySelector(".ham");
+      const closeMenu = document.querySelector(".close-menu");
+      const overLay = document.querySelector(".overlay");
+      const mobileNav = document.querySelector(".desktop-nav");
+
+      hamBurger.addEventListener("click", e => {
+        e.preventDefault();
+        mobileNav.classList.add("active");
+        overLay.style.display = "block";
+        closeMenu.classList.add("active");
+      });
+
+      closeMenu.addEventListener("click", e => {
+        e.preventDefault();
+        mobileNav.classList.remove("active");
+        overLay.style.display = "none";
+        closeMenu.classList.remove("active");
+      });
+    </script>
+
+<!--header-->
+  <script>
+    const header = document.getElementById("main-header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.remove("transparent");
+        header.classList.add("scrolled");
+      } else {
+        header.classList.add("transparent");
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Our Process-->
+<div class="process-wrapper" id="locations-section">
+  <h2 class="process-heading">Schedule a Demo</h2>
+  <hr class="process-heading-line">
+  <p class="process-subheading">Want to see the strength of our products for yourself? At SHIELD X DEFENSE, we believe in showing—not
+    just telling—why our security film and shutters are the best in the business.</p>
+
+  <section class="process-section">
+    <div class="process-container">
+      <!-- Sidebar -->
+      <div class="process-sidebar">
+        <ul>
+          <li data-target="Discovery" class="active">Schedule</li>
+          <li data-target="design">Demonstration</li>
+          <li data-target="Consultation">Hands-On</li>
+          <li data-target="Final">Q&A</li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+          <div class="process-content">
+            <section id="Discovery" class="process-content-block">
+              <div class="process-inner">
+                <div class="process-left-image ">
+                    <img src="photo/demo-1.png" alt="Container 1 image here">
+                </div>
+            <div class="process-feature-content">
+              <h3>Schedule Your Demo</h3>
+              <hr class="process-title-line">
+              <p>Contact us by phone, email, or through our website to book a demonstration at a time that works for you.</p>
+              <ul>
+                <li><strong>① </strong> Fill out our quick demo request form or give us a call to choose a time that fits your schedule.</li>
+                <li><strong>② </strong> Our team will confirm your appointment and prepare a customized demonstration based on your security needs.</li>
+                <li><strong>③ </strong> Meet with our experts to see how SHIELD X DEFENSE products work in real time and get answers to your questions.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="design" class="process-content-block">
+          <div class="process-inner">
+            <div class="process-feature-content">
+              <h3>On-Site Demonstration</h3>
+              <hr class="process-title-line">
+              <p>One of our experts will come to your location with product samples and perform a live demo. We’ll
+                showcase the durability, impact resistance, and security features that set our products apart. </p>
+              <ul>
+                <li><strong>① </strong> A SHIELD X DEFENSE specialist arrives at your location with samples tailored to your property’s needs.</li>
+                <li><strong>② </strong> We perform a live demonstration, showing how our security film, shutters, and shatter defense products hold up under impact.</li>
+                <li><strong>③ </strong> Experience the difference first-hand and see how our solutions can protect your home or business.</li>
+              </ul>
+            </div>
+            <div class="process-left-image">
+                <img src="photo/demo-3.png" alt="Container 2 image here">
+            </div>
+          </div>
+        </section>
+
+        <section id="Consultation" class="process-content-block">
+          <div class="process-inner">
+            <div class="process-left-image">
+                <img src="photo/demo-2.jpg" alt="Container 3 image here">
+            </div>
+            <div class="process-feature-content">
+              <h3>Hands-On Experience</h3>
+              <hr class="process-title-line">
+                  <p>See firsthand how our film and shutters hold up against force, weather conditions, and real-world
+                    scenarios—proving the level of protection your property can have.</p>
+                  <ul>
+                    <li><strong>① </strong> Test the strength of our security film and shutters yourself with guided demonstrations.</li>
+                    <li><strong>② </strong> Watch how our products perform against impact, harsh weather, and attempted break-ins.</li>
+                    <li><strong>③ </strong> Gain confidence knowing exactly how SHIELD X DEFENSE can protect your property in real-world conditions.</li>
+                  </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="Final" class="process-content-block">
+          <div class="process-inner">
+            <div class="process-feature-content">
+              <h3>Q&A and Advocacy</h3>
+              <hr class="process-title-line">
+                <p>After the demo, we’ll answer your questions and provide professional recommendations tailored to
+                   your property’s needs.</p>
+                  <ul>
+                    <li><strong>① </strong> Sit down with our expert to discuss your security concerns and goals.</li>
+                    <li><strong>② </strong> Get clear answers to all your questions about products, installation, and protection levels.</li>
+                    <li><strong>③ </strong> Receive tailored recommendations designed to best secure your home or business.</li>
+                  </ul>
+            </div>
+            <div class="process-left-image ">
+                <img src="photo/demo-4.jpg" alt="Container 4 image here">
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+  // process
+const processWrapper = document.querySelector(".process-wrapper");
+const processSidebar = document.querySelector(".process-sidebar");
+const navItems = document.querySelectorAll(".process-sidebar li");
+const sections = document.querySelectorAll(".process-content-block");
+
+function handleScroll() {
+  const scrollY = window.scrollY;
+  const processTop = processWrapper.offsetTop;
+  const processHeight = processWrapper.offsetHeight;
+  const processBottom = processTop + processHeight;
+
+  // Show/hide sidebar when inside/outside process
+  if (scrollY + window.innerHeight / 2 >= processTop && scrollY <= processBottom - window.innerHeight / 2) {
+    processSidebar.classList.add("visible");
+  } else {
+    processSidebar.classList.remove("visible");
+    navItems.forEach(li => li.classList.remove("active")); // clear highlight
+    return;
+  }
+
+  // Highlight the correct nav item
+  let currentId = "";
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const middleY = rect.top + rect.height / 2;
+    if (middleY >= 0 && middleY <= window.innerHeight) {
+      currentId = section.id;
+    }
+  });
+
+  navItems.forEach(li => {
+    li.classList.remove("active");
+    if (li.dataset.target === currentId) {
+      li.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", handleScroll);
+
+
+// Smooth scroll on click
+navItems.forEach(li => {
+  li.addEventListener("click", () => {
+    const id = li.dataset.target;
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+});
+
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("load", handleScroll);  
+
+</script>
+
+
+
+
+
+
+
+<section class="testimonial-section hero-section" id="testimonial">
+  <div class="testimonial-container">
+    <h1 class="testimonial-title title-animate">What Our Customers Have to Say</h1>
+
+    <div class="testimonial-boxes">
+
+      <div class="testimonial-box">
+        <div class="testimonial-icon"><p>AR</p>></div>
+        <div class="testimonial-info">Miami, FL</div>
+        <p class="testimonial-quote">"After a big storm last year, we had windows crack in our neighborhood. With Armex film on our home, we made it through this season with zero damage. It gives us real peace of mind."<br>- Amanda R.
+          <br> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+      </div>
+
+      <div class="testimonial-box">
+        <div class="testimonial-icon"><p>DM</p></div>
+        <div class="testimonial-info">Phoenix, AZ</div>
+        <p class="testimonial-quote">"We own a small jewelry store, and installing the shutters from Armex has been one of the best decisions for our business. Closing up at night finally feels safe."<br>- David M
+          <br> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+      </div>
+
+      <div class="testimonial-box">
+        <div class="testimonial-icon"><P>JT</P>></div>
+        <div class="testimonial-info">Houston, TX</div>
+        <p class="testimonial-quote">"I was skeptical at first, but after seeing their demo and how the glass held up to impact, I was sold. The security film looks invisible but feels like an extra layer of protection."<br>- James T
+          <br> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+      </div>
+
+      <div class="testimonial-box">
+        <div class="testimonial-icon"><p>ML</p></div>
+        <div class="testimonial-info">Los Angeles, CA  </div>
+        <p class="testimonial-quote">"Living in California, we worry about break-ins. The shutters and film combo from Armex gives us both security and privacy. I can actually sleep better at night."<br>- Maria L
+          <br> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+      </div>
+
+      <div class="testimonial-box">
+        <div class="testimonial-icon"><p>CB</p></div>
+        <div class="testimonial-info">Phoenix, AZ</div>
+        <p class="testimonial-quote">"The team was professional and explained everything during the demo. Now that it’s installed, I honestly don’t know why more people don’t have this level of protection."<br>- Chris B
+          <br> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+      </div>
+
+      <div class="testimonial-box">
+        <div class="testimonial-icon"><p>RH</p></div>
+        <div class="testimonial-info"> Tampa, FL</div>
+        <p class="testimonial-quote">"During hurricane season, our neighbors’ windows shattered, but ours held strong thanks to Armex film. It really does what they promise."<br>- Rebecca H
+          <br> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="contact-section scrolltome" id="contact">
+  <div class="contact-container">
+    
+    <!-- Left side: Title -->
+    <div class="contact-left">
+      <h4 class="scroll-animateY">
+        Don't Wait Until it's Too Late - Get in Touch Today and Secure What Matters Most.
+      </h4>
+    </div>
+
+    <!-- Right side: Form -->
+    <div class="contact-right">
+    <form class="contact-form scroll-animateY">
+      <label class="scroll-animate">
+        <input type="text" name="name" required placeholder="First and Last name">
+      </label>
+  
+      <label class="scroll-animate">
+        <input type="tel" name="phone" required placeholder="Phone">
+      </label>
+  
+      <label class="scroll-animate">
+        <input type="email" name="email" required placeholder="Email">
+      </label>
+  
+      <label class="scroll-animate">
+        <input type="text" name="location" required placeholder="Location">
+      </label>
+  
+      <label class="scroll-animate">
+        <textarea name="project" rows="4" placeholder="Project Overview (Optional)"></textarea>
+      </label>
+  
+      <button class="scroll-animate contact-button" type="submit">Send</button>
+    </form>
+    </div>
+  </div>
+  
+   
+
+    <!-- Popup message -->
+    <div id="popupMessage" class="popup-message">
+      <div class="popup-content">
+        <h3>Thank You!</h3>
+        <p>Your message has been sent. We’ll be in touch soon.</p>
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </div>  
+</section>
+
+  
+
+
+
+<div style="background-color: transparent; padding-top: 1rem; padding-bottom: 1rem;">
+<div class="back-to-top" onclick="scrollToTop()">
+  <i class="fa-solid fa-arrow-up"></i>
+</div>
+</div>
+
+
+
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col footer-col-logo scroll-animate scroll-animateR">
+      <div class="footer-logo "><img src="photo/armex-logo-white.png" alt="ARMEX SHIELD"></div>
+    </div>
+    <div class="footer-col footer-col-social scroll-animate scroll-animateR">
+      <h4>Social</h4>
+      <hr class="footer-title-line">
+    <div class="socials">
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-solid fa-phone"></i></a>
+        <span class="footer-dash">|</span>
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-google"></i></a></a>
+        <span class="footer-dash">|</span>
+        <a href="https://www.instagram.com/new_image_az/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <span class="footer-dash">|</span>
+        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+    </div>
+    <div class="footer-col scroll-animateY">
+      <h4>Contact Info</h4>
+      <hr class="footer-title-line">
+      <p>Email: info@armexshield.com</p>
+      <p>Phone: (602) 810-7892</p>
+    </div>
+    <div class="footer-col scroll-animateY">
+      <h4>ARMEX SHIELD</h4>
+      <hr class="footer-title-line">
+      <p class="footer-disclaimer">Powered by ARMEX SHIELD — Protecting homes and businesses with security film, shutters, and shatter defense solutions. Your safety is our mission, every step of the way.</p>
+    </div>
+  <!-- FOOTER LEGAL ROW -->
+  <div class="footer-legal-container scroll-animateY">
+    <p class="copyright-footer">&copy; 2025 ARMEX SHIELD. All rights reserved.</p>
+    <div class="footer-legal-links">
+      <a href="term.html" target="_blank">Terms</a>
+      <a href="privacy.html" target="_blank">Privacy</a>
+      <a href="legal.html" target="_blank">Legal</a>
+    </div>
+  </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<!--FAQ section-->
+<script>
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach((question) => {
+  question.addEventListener('click', () => {
+    const currentItem = question.parentElement;
+    const currentAnswer = currentItem.querySelector('.faq-answer');
+
+    const isOpen = currentItem.classList.contains('active');
+
+    // Close all open items
+    document.querySelectorAll('.faq-item.active').forEach((item) => {
+      if (item !== currentItem) {
+        item.classList.remove('active');
+        const answer = item.querySelector('.faq-answer');
+        answer.style.height = answer.scrollHeight + 'px';
+        // Force reflow for transition
+        void answer.offsetHeight;
+        answer.style.height = '0';
+      }
+    });
+
+    // Toggle current item
+    if (!isOpen) {
+      currentItem.classList.add('active');
+      currentAnswer.style.height = currentAnswer.scrollHeight + 'px';
+    } else {
+      currentAnswer.style.height = currentAnswer.scrollHeight + 'px';
+      // Force reflow for transition
+      void currentAnswer.offsetHeight;
+      currentAnswer.style.height = '0';
+      currentItem.classList.remove('active');
+    }
+  });
+});
+</script>
+
+
+<!--pop up message-->
+  <script>
+    const form = document.getElementById('contactForm');
+    const popup = document.getElementById('popupMessage');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      const response = await fetch('https://formspree.io/f/mpwrjngo', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+
+      if (response.ok) {
+        form.reset();
+        popup.style.display = 'flex';
+      } else {
+        alert('There was an error submitting the form. Please try again.');
+      }
+    });
+
+    function closePopup() {
+      popup.style.display = 'none';
+    }
+  </script>
+
+
+<!--form miss spelling-->
+<script>
+  document.querySelector('form').addEventListener('submit', function (e) {
+    const phone = document.querySelector('input[name="phone"]').value;
+    if (!/^[\d\s()+-]+$/.test(phone)) {
+      alert('Please enter a valid phone number.');
+      e.preventDefault();
+    }
+  });
+</script>
+
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+  <script>AOS.init();</script>
+
+
+  <script src="script.js"></script>  
+</body>
+</html>
