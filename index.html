@@ -143,32 +143,42 @@
 
 
 <script>
-  // MOBILE DROPDOWN FIX
-  document.querySelectorAll(".dropdown").forEach(drop => {
-    drop.addEventListener("click", e => {
-      // Prevent link highlight / text selection
-      e.stopPropagation();
+  // MOBILE DROPDOWN FIX — WORKING LINKS VERSION
+  document.querySelectorAll(".dropdown").forEach(dropdown => {
+    const menuItem = dropdown.querySelector(".menu-item");
+    const dropdownContent = dropdown.querySelector(".dropdown-content");
+
+    // Toggle dropdown ONLY when clicking the menu title
+    menuItem.addEventListener("click", e => {
       e.preventDefault();
+      e.stopPropagation();
 
-      const content = drop.querySelector(".dropdown-content");
-
-      // Close any other open dropdowns
+      // Close all other dropdowns
       document.querySelectorAll(".dropdown-content").forEach(d => {
-        if (d !== content) d.classList.remove("active");
+        if (d !== dropdownContent) d.classList.remove("active");
       });
 
-      // Toggle this dropdown
-      content.classList.toggle("active");
+      dropdownContent.classList.toggle("active");
+    });
+
+    // Allow clicking links inside dropdown normally
+    dropdownContent.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        // Let link work — navigate normally
+        dropdownContent.classList.remove("active");
+        mobileNav.classList.remove("active");
+        overLay.style.display = "none";
+        closeMenu.classList.remove("active");
+      });
     });
   });
 
-  // Close dropdowns when clicking outside
+  // Clicking anywhere else closes all dropdowns
   document.addEventListener("click", () => {
-    document.querySelectorAll(".dropdown-content").forEach(d => {
-      d.classList.remove("active");
-    });
+    document.querySelectorAll(".dropdown-content").forEach(d => d.classList.remove("active"));
   });
 </script>
+
 
 
 
@@ -718,5 +728,6 @@ revealItems.forEach(item => observer.observe(item));
 </body>
 
 </html>
+
 
 
