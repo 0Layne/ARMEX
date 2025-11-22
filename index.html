@@ -142,6 +142,33 @@
 
 
 
+<script>
+  // MOBILE DROPDOWN FIX
+  document.querySelectorAll(".dropdown").forEach(drop => {
+    drop.addEventListener("click", e => {
+      // Prevent link highlight / text selection
+      e.stopPropagation();
+      e.preventDefault();
+
+      const content = drop.querySelector(".dropdown-content");
+
+      // Close any other open dropdowns
+      document.querySelectorAll(".dropdown-content").forEach(d => {
+        if (d !== content) d.classList.remove("active");
+      });
+
+      // Toggle this dropdown
+      content.classList.toggle("active");
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".dropdown-content").forEach(d => {
+      d.classList.remove("active");
+    });
+  });
+</script>
 
 
 
@@ -691,4 +718,5 @@ revealItems.forEach(item => observer.observe(item));
 </body>
 
 </html>
+
 
