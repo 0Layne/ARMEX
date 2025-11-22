@@ -2339,7 +2339,7 @@ body{
   }
 
   .proc-title {
-    font-size: 2.4rem !important;
+    font-size: 1.7rem !important;
   }
 
   .process-box {
@@ -2709,4 +2709,5 @@ body{
     width: 100%;
     margin: 0 auto;
   }
+
 }
