@@ -466,7 +466,7 @@ footer:hover{
 }
 
 .footer-logo img {
-  max-width: 40vh !important;
+  max-width: 36vh !important;
   margin: 0 auto;
   margin-left: 5vh;
   margin-right: 15vh;
@@ -916,4 +916,5 @@ padding-left: 10vh;
     left: 38%;
   }
 }
+
 
