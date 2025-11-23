@@ -32,7 +32,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <!-- Modern browsers theme color -->
-    <meta name="theme-color" content="#1e3b27">
+    <meta name="theme-color" content="#0081cc">
 </head>
 <body>
  <header class="header transparent" id="main-header">
@@ -44,9 +44,11 @@
       </div>
 
       <button class="icon-menu ham">
-        <i style="color: #1e3b27;" class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars"></i>
       </button>
-        <h1 class="close-menu">X</h1>
+
+      <i class="fa-light fa-circle-xmark close-menu"></i>
+
       <div class="desktop-nav">
 
         <!-- CENTERED Nav Links -->
@@ -83,9 +85,9 @@
         <!-- RIGHT SIDE -->
         <div class="nav-right">
           <div class="social-btns">
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-google"></i>
+            <a href="https://google.com" target="_blank"><i class="fa-brands fa-google" style="color: #1e3b27;"></i></a>
+            <a href="https://www.instagram.com/armexshield/" target="_blank"><i class="fa-brands fa-instagram" style="color: #1e3b27;"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61584090332731" target="_blank"><i class="fa-brands fa-facebook" style="color: #1e3b27;"></i></a>
           </div>
           <div class="nav-btns">
             <a class="chat-btn" href="contact.html#contact">Let's Chat!</a>
@@ -97,7 +99,6 @@
       <div class="overlay"></div>
     </nav>
 </header>
-
 
     <script>
       const hamBurger = document.querySelector(".ham");
@@ -176,6 +177,4 @@
   <script>AOS.init();</script>
 
   </body>
-
   </html>
-
