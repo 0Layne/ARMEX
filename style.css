@@ -4,6 +4,12 @@
   box-sizing: border-box;
   font-family: "Goldman", sans-serif;
 }
+@font-face {
+  font-family: 'Epillox Bold';
+  src: url('fonts/Epillox-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body{
   overflow-x: hidden !important;
@@ -107,9 +113,12 @@ body{
   position: relative;
   z-index: 2; /* bring text above watermark */
 }
-
+.armex-shield{
+  font-family: 'Epillox Bold', sans-serif;
+}
 
 .hero-title {
+  font-family: 'Epillox Bold', sans-serif;
   font-size: 6rem;
   font-weight: 100;
   margin-bottom: 40px;
@@ -119,6 +128,7 @@ body{
   width: 80%;
   color: rgb(0, 0, 0);
 }
+
 
 
 .hero-left-image-x{
@@ -2709,5 +2719,4 @@ body{
     width: 100%;
     margin: 0 auto;
   }
-
 }
